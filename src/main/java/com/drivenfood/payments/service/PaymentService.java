@@ -34,7 +34,7 @@ public class PaymentService {
 		return modelMapper.map(payment, PaymentDto.class);
 	}
 
-	public PaymentDto criarPagamento(PaymentDto dto) {
+	public PaymentDto createPayment(PaymentDto dto) {
 		Payment payment = modelMapper.map(dto, Payment.class);
 		payment.setStatus(Status.CREATED);
 		repository.save(payment);
@@ -42,7 +42,7 @@ public class PaymentService {
 		return modelMapper.map(payment, PaymentDto.class);
 	}
 
-	public PaymentDto atualizarPagamento(Long id, PaymentDto dto) {
+	public PaymentDto updatePayment(Long id, PaymentDto dto) {
 		Payment payment = modelMapper.map(dto, Payment.class);
 		payment.setId(id);
 		payment = repository.save(payment);
